@@ -1,0 +1,339 @@
+@import "../style-helpers";
+
+.packages_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  margin: 200px 0;
+
+  @media (max-width: $screenLg) {
+    margin: 130px 0 0;
+  }
+
+  @media (max-width: $screenSm) {
+    margin: 150px 0 100px;
+  }
+}
+
+.packages {
+  max-width: 1120px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 70px;
+  padding: 0 24px;
+
+  @media (max-width: 1160px) {
+    // justify-content: center;
+    // align-items: center;
+    flex-direction: column;
+    gap: 90px;
+  }
+
+  @media (max-width: 991px) {
+    // justify-content: center;
+    // align-items: center;
+
+    gap: 10px;
+  }
+
+  @media (max-width: 475px) {
+    gap: 5px;
+    padding: 0 18px;
+  }
+  &__intro {
+    max-width: 430px;
+    width: 100%;
+    @media (max-width: 1160px) {
+      // justify-content: center;
+      max-width: 680px;
+    }
+  }
+
+  &__text {
+    // margin-bottom: 0 !important;
+    h3 {
+      @include font(42px, 1.4 !important, 400);
+      color: var(--color-text-5-900);
+      @media (max-width: $screenSm) {
+        font-size: 36px;
+      }
+    }
+  }
+
+  &__desc {
+    p {
+      @include font(18px, 1.4 !important, 300);
+      color: var(--color-text-50-400);
+      @media (max-width: $screenSm) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__slider_wrapper {
+    margin-top: 42px;
+    &_mob {
+      width: 100%;
+      margin-top: unset;
+    }
+
+    @media (max-width: $screenLg) {
+      margin-top: 30px;
+    }
+  }
+
+  &__rangeSlider {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    @media (max-width: $screenSm) {
+      align-items: flex-start;
+    }
+  }
+  &__rangeSliderTitle {
+    h4 {
+      margin-bottom: 0 !important;
+      @include font(18px, 1.4 !important, 400);
+      color: var(--color-text-5-400);
+    }
+  }
+  &__rangeSliderPrice {
+    span {
+      @include font(28px, 1.4 !important, 600);
+      color: var(--color-text-5-900);
+    }
+  }
+
+  &__plan {
+    max-width: 680px;
+    width: 100%;
+    padding: 36px 24px;
+    margin-top: 60px;
+    border: 1px solid var(--package-card-border);
+    background: var(--package-card-background);
+    border-radius: 24px;
+
+    @media (max-width: 1160px) {
+      margin-top: unset;
+    }
+
+    @media (max-width: $screenSm) {
+      padding: 24px;
+    }
+
+    &_head {
+      display: flex;
+      justify-content:center;
+      align-items:center;
+      gap: 12px;
+      @media (max-width: $screenLg) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    &_body {
+      margin-top: 70px;
+      display: flex;
+      justify-content: space-between;
+      // flex-direction: column;
+      gap: 16px;
+
+      @media (max-width: $screenLg) {
+        margin-top: 24px;
+      }
+
+      @media (max-width: $screenSm) {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+
+    // &_logo {
+    //   max-width: 150px;
+    // }
+    &_status_wrapper {
+      // max-width: 285px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: -5px;
+      svg {
+        margin-top: 12px;
+        width: 100%;
+      }
+
+      @media (max-width: $screenLg) {
+        // flex-direction: column;
+        // align-items: flex-start;
+        max-width: 100%;
+        margin-bottom: unset !important;
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    &_btn {
+      text-align: center;
+      padding: 12px 24px;
+      margin-top: 48px;
+      background: var(--color-primary-500);
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 21px;
+      color: var(--color-neutral-25);
+      white-space: nowrap;
+      cursor: pointer;
+
+      @media (max-width: $screenLg) {
+        margin-top: 24px;
+      }
+
+      @media (max-width: $screenSm) {
+        margin-top: 16px;
+      }
+
+      // &:hover {
+      //   background: var(--color-primary-25);
+      //   border: 1px solid var(--color-header-btn-border);
+      //   color: var(--color-text2);
+      // }
+    }
+  }
+}
+
+.plan_status {
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 5px;
+  background: linear-gradient(
+    316deg,
+    rgba(13, 110, 253, 0.3) 20.83%,
+    rgba(13, 110, 253, 0.15) 50.59%,
+    rgba(13, 110, 253, 0.3) 80.34%
+  );
+  // border: 2px solid inherit;
+  @include font(18px, 1, var(--fw-500));
+  text-align: center;
+  color: var(--plan-status-text);
+  transition: 0.2;
+
+  @media (max-width: $screenLg) {
+    min-width: 78px;
+  }
+  @media (max-width: $screenSm) {
+    font-size: 12px;
+  }
+}
+
+.plan_status_standard {
+  background: transparent;
+  color: var(--plan-status-text-standard);
+  border: 2px solid var(--plan-status-standard-border);
+}
+
+.package_plan_statusInfo {
+  display: flex;
+  flex-direction: column;
+  // justify-content: flex-end;
+  align-items: flex-end;
+
+  @media (max-width: $screenLg) {
+    align-items: flex-start;
+  }
+  h3 {
+    @include font(18px, 1.4, 300);
+    margin-bottom: 5px !important;
+
+    @media (max-width: $screenGt) {
+      font-size: 16px;
+    }
+
+    @media (max-width: $screenLg) {
+      font-size: 18px;
+    }
+    @media (max-width: $screenSm) {
+      font-size: 14px;
+    }
+  }
+
+  span {
+    @include font(22px, 1.2, 500);
+    color: var(--inverted-color22);
+    @media (max-width: $screenGt) {
+      font-size: 17px;
+    }
+
+    @media (max-width: $screenLg) {
+      font-size: 21px;
+    }
+
+    @media (max-width: $screenSm) {
+      font-size: 18px;
+    }
+  }
+}
+.privileges_field {
+  // display: flex;
+  // gap: 16px;
+  // align-items: center;
+
+  max-width: 133px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: $screenSm) {
+    gap: 12px;
+    justify-content: flex-start;
+    max-width: 100%;
+    flex-direction: row;
+
+  }
+
+
+  > div > svg {
+    margin-top: 10px !important;
+    @media (max-width: $screenSm) {
+      max-width: 64px;
+      max-height: 64px;
+    }
+  }
+  &__content {
+    span {
+      display: block;
+      width: 100%;
+      @include font(18px, 1.4, 400);
+      color: var(--color-neutral-200);
+      // text-align: center;
+      // margin-left: 16px;
+      // margin-right: 6px;
+      @media (max-width: $screenSm) {
+        font-size: 16px;
+      }
+    }
+
+    &_ja {
+      span {
+        font-size: 19px;
+      }
+    }
+
+    &_ar {
+      span {
+        margin-left: 6px;
+      }
+    }
+  }
+}

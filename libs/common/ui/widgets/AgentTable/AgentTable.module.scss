@@ -1,0 +1,364 @@
+@import "libs/common/ui/scss/indexDemo.scss";
+
+.agentTable {
+   	font-family: $Redhat;
+   	margin-bottom: 155px;
+	
+   	@include mediaEx {
+		padding: 0 15px;
+	}
+	
+	@include mediaGt {
+		 padding: 5px;
+	}
+	
+	@include mediaLg {
+		width: calc(100% + 30px);
+		margin-left: -15px;
+		padding: 0;
+	}
+	
+	@include mediaMd {
+		width: 100%;
+		margin-left: 0;
+		padding: 5px;
+	}
+
+	@include mediaSm {
+		padding: 10px;
+	}
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 67px;
+		margin-bottom: 24px;
+	}
+
+	&__title {
+		margin-bottom: 0;
+		color: var(--color-neutral-200);
+
+		@include titleFont(26px, 1.2);
+
+		@media (max-width: 350px) {         
+			@include titleFont(22px, 1.2);
+		}
+	}
+
+	&__tooltip {
+		cursor: pointer;
+		background-color: var(--text-color-7);
+		border-radius: 50%;
+      color: red !important;
+      width: 13.33px;
+      height: 13.33px;
+
+		@include mediaLg {
+			width: 12px;
+			height: 12px;
+		}
+	}
+
+	&__table {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	&__headerText {
+		@include titleFont(16px, 1.4, 600);
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 6px;
+		color: var(--inverted-color7);
+
+		// svg path {
+		// 	stroke: var(--bg-main) !important;
+		// 	// fill: var(--bg-main) !important;
+		// }
+      
+
+		&:first-of-type {
+			justify-self: start;
+		}
+      &:nth-child(3) {
+         text-align: center;
+         display: block;
+         width: 67px;
+         margin-left: auto;
+         
+         @include mediaLg{
+            margin-left: 0;
+         }
+         @include mediaSm{
+            width: 50px;
+            transform: translateX(-70%);
+         }
+      }
+
+		@include mediaLg {
+			@include titleFont(12px, 1.4, 600);
+			white-space: nowrap;
+
+			&:nth-of-type(3),
+			&:nth-of-type(4) {
+				justify-self: center;
+			}
+
+			&:nth-of-type(5) {
+				display: none;
+			}
+		}
+
+		@include mediaMd {
+			@include titleFont(10px, 1.4, 600);
+
+			&:nth-of-type(4) {
+				display: none;
+			}
+
+			&:nth-of-type(5) {
+				display: none;
+			}
+		}
+
+		@include mediaSm {
+			@include titleFont(14px, 1.2, 500);
+
+			&:nth-of-type(4) {
+				display: none;
+			}
+
+			&:nth-of-type(5) {
+				display: none;
+			}
+		}
+	}
+
+	&__item {
+		width: 100%;
+		display: grid;
+		align-items: center;
+		padding: 17.5px 16px;
+		gap: 0 60px;
+		text-align: right;
+		border-bottom: 1px solid var(--background-3-1);
+		position: relative;
+		transition: 0.3s;
+		border-radius: 8px;
+		grid-template:
+			auto / minmax(200px, auto) minmax(150px, auto) minmax(100px, auto) minmax(120px, auto) minmax(150px, auto) minmax(100px, auto);
+
+		@include mediaEx {
+			grid-template: auto / repeat(6, 1fr);
+			gap: 0 30px;
+		}
+
+		@include mediaLg {
+			grid-template: auto / 3fr repeat(4, 2fr);
+
+			&:hover {
+				&:not(:first-of-type) {
+					background-color: rgba($grayColor, 0.1);
+				}
+
+				.agentTable__invest {
+					display: block;
+				}
+			}
+		}
+
+		@include mediaMd {
+			grid-template: auto / 3fr repeat(3, 2fr);
+			gap: 0 10px;
+		}
+
+		@include mediaSm {
+			box-sizing: border-box;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			align-items: center;
+			// height: 80px;
+			// padding: 23px 0;
+			padding: 23px 10px;
+		}
+
+		&:hover {
+			background: var(--inverted-color10);
+		}
+
+		&_header {
+			background: var(--inverted-color10);
+		}
+	}
+
+	&__property {
+		text-align: left;
+
+		@include mediaSm {
+			min-width: 85px;
+		}
+
+	}
+
+	&__propertyTitle {
+		@include titleFont(18px, 1.2, 600);
+		margin-bottom: 4px;
+		color: var(--inverted-color8);
+		word-break: keep-all;
+
+		@include mediaLg {
+			@include titleFont(14px, 1.2, 600);
+		}
+
+		@include mediaMd {
+			@include titleFont(12px, 1.2, 600);
+		}
+
+		@include mediaSm {
+			@include titleFont(12px, 1.2, 500);
+		}
+	}
+
+	&__propertyLocation {
+		@include titleFont(18px, 1.2, 400);
+		color: var(--color-neutral-400);
+
+		@include mediaLg {
+			@include titleFont(14px, 1.2, 400);
+		}
+
+		@include mediaMd {
+			@include titleFont(12px, 1.2, 400);
+		}
+
+		@include mediaSm {
+			@include titleFont(12px, 1.2, 400);
+		}
+	}
+
+	&__yield {
+		@include titleFont(18px, 1, 600);
+		color: var(--color-primary-500);
+      padding: 0.33em 8px 0.23em;
+      display: flex;
+      background: var(--color-primary-25);
+      border-radius: 9px;
+      justify-self: end;
+
+		@include mediaLg {
+			@include titleFont(14px, 1, 600);
+		}
+
+		@include mediaMd {
+			@include titleFont(16px, 1, 600);
+		}
+
+		@include mediaSm {
+			@include titleFont(12px, 1, 500);
+			min-width: max-content;
+			word-break: keep-all;
+		}
+	}
+
+	&__text {
+		@include titleFont(18px, 1.2, 600);
+    //   color: var(--color-neutral-50);
+	color: var(--inverted-color8);
+
+		@include mediaLg {
+			@include titleFont(14px, 1.2, 600);
+			text-align: center;
+		}
+
+		@include mediaMd {
+			@include titleFont(17px, 1.2, 600);
+			text-align: center;
+		}
+
+		@include mediaSm {
+			@include titleFont(12px, 1.2, 500);
+			min-width: max-content;
+		}
+	}
+
+	
+
+	&__graph {
+		aspect-ratio: 150 / 51;
+		max-width: 150px;
+		max-height: 51px;
+		min-width: 50px;
+		width: 100%;
+		height: auto;
+		justify-self: flex-end;
+		-webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+		-moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+		-o-transform: matrix(-1, 0, 0, 1, 0, 0);
+		transform: matrix(-1, 0, 0, -1, 0, 0);
+
+		@include mediaLg {
+			@include titleFont(12px, 1.2, 600);
+			display: none;
+		}
+
+		path {
+			stroke: var(--color-green-200) !important;
+		}
+	}
+//    path {
+//       stroke: var(--inverted-color1);
+//    }
+
+	&__graph--no-profit {
+		path {
+			stroke: var(--color-red-200) !important;
+		}
+	}
+
+	&__ticker {
+		@include mediaMd {
+			display: none;
+		}
+	}
+
+	&__invest {
+		@include mediaLg {
+			z-index: 2;
+		}
+
+
+		@include mediaSm {
+			@include titleFont(12px, 1.4, 500);
+
+
+		}
+	}
+}
+
+span .agentTable__invest_btn {
+
+	color: var(--color-primary-500);
+    background: var(--color-primary-25);
+
+   border-radius: 100px;
+   font-size: 15px;
+   line-height: 1.4;
+   font-weight: 700;
+   padding: 8px 18px;
+
+ 
+	@include mediaSm {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 8px 16px;
+		gap: 10px;
+		@include titleFont(12px, 1.4, 500);
+	}
+}

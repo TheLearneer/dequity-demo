@@ -1,0 +1,229 @@
+@import "../../../scss/vars2.scss";
+@import "../style-helpers";
+
+.trusted {
+    width: 100%;
+    position: relative;
+    
+    //  background: url(../../../assets/imgs/trustedBG.png);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 757px;
+
+    @media (max-width: 600px) {
+      height: 457px;
+    }
+
+    @media (max-width: 475px) {
+      height: 257px;
+    }
+
+    @media (max-width: 600px) {
+      padding-top: 70px;
+      margin-top: 70px;
+      padding-bottom: 50px;
+    }
+
+    img {
+        width: 100%;
+      //   min-width: 1690px;
+        opacity: 0.25;
+    }
+
+   
+
+    &_text {
+
+        width: 80%;
+       
+        gap: 10px;
+        position: absolute;
+        text-align: center;
+        font-weight: 500;
+
+        padding: 0 10px;
+      //   white-space: nowrap;        
+
+      span{
+        @include font(48px,"normal",var(--fw-400));
+        color: var(--color-text-5-900);
+
+        @media (max-width: 868px) {
+          font-size: 35px;
+        }
+
+        @media (max-width: 552px) {
+          font-size: 27px;
+        }
+
+        @media (max-width: 434px) {
+          font-size: 26px;
+        }
+
+      }
+        &_country {
+           
+            margin-top: 16px;
+            // margin-left: 8px;
+            // font-weight: 500;
+            // font-size: 72px;
+            // line-height: 72px;
+            @include font(72px,"normal",var(--fw-400));
+            color: var(--color-primary-500);
+            // text-align: center;
+            transform: translateY(20px);
+
+            top: 0px;
+            position: relative;
+            margin-top: -20px;
+            // text-align: left;
+            list-style: none;
+            animation-name: fadeCustom;
+            animation-direction: normal;
+            animation-duration: 3s;
+            opacity: 0;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            @media (max-width:425px) {
+              font-size: 24px;
+            }
+        }
+   
+
+        @media (max-width: 575px) {
+          // flex-direction: column;
+         font-size: 32px;
+         line-height: 48px;
+
+         &_pt,
+         &_es
+         {
+            font-size: 7.65vw;
+         }
+
+         span {
+            // font-size: inherit;
+            line-height: inherit;
+            transform: translateY(30px);
+         }
+        }
+        
+      @media (max-width:425px) {
+        // font-size: 30px;
+        width: 100%;
+        // display: flex;
+        // justify-content: center;
+        span {
+          font-size: 24px;
+   
+       }
+      }
+
+    }
+
+    &__decor1 {
+      position: absolute;
+      user-select: noen;
+      width: 1435.44px;
+      height: 774.9px;
+      left: -10%;
+      top: -30%;
+      background: var(--color-primary-500);
+      // opacity: 0.25;
+      opacity: 0.1;
+      // filter: blur(191.5px);
+      background: radial-gradient(ellipse farthest-corner at center center, var(--color-primary-500) 0%, transparent 60%);
+
+      @media (max-width: 575px) {
+        &{
+          display: none;
+        }
+      }
+    }
+
+    &__decor2 {
+      position: absolute;
+      width: 1435.44px;
+      height: 774.9px;
+      right: -40%;
+      bottom: -20%;
+    
+      // opacity: 0.35;
+      opacity: 0.2;
+      // filter: blur(191.5px);
+      background: radial-gradient(ellipse farthest-corner at center center, var(--color-primary-500) 0%, transparent 60%);
+
+      @media (max-width: 575px) {
+        &{
+          bottom: -80%;
+        }
+      }
+    }
+}
+
+@-webkit-keyframes fadeCustom {
+    0% {
+      top: 40px;
+      opacity: 0;
+    }
+    10% {
+      top: 0px;
+      opacity: 1;
+    }
+    90% {
+      top: 0px;
+      opacity: 1;
+    }
+    100% {
+      top: -40px;
+      opacity: 0;
+    }
+  }
+  
+  @-o-keyframes fadeCustom {
+    0% {
+      top: 40px;
+      opacity: 0;
+    }
+    50% {
+      top: 0px;
+      opacity: 1;
+    }
+    100% {
+      top: -40px;
+      opacity: 0;
+    }
+  }
+  
+  @-moz-keyframes fadeCustom {
+    0% {
+      top: 40px;
+      opacity: 0;
+    }
+    50% {
+      top: 0px;
+      opacity: 1;
+    }
+    100% {
+      top: -40px;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeCustom {
+    0% {
+      top: 40px;
+      opacity: 0;
+    }
+    50% {
+      top: 0px;
+      opacity: 1;
+    }
+    100% {
+      top: -40px;
+      opacity: 0;
+    }
+  }

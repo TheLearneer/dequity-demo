@@ -1,0 +1,14 @@
+@mixin font($fz, $lh: 1.4, $fw: var(--fw-700)) {
+  font-weight: $fw;
+  font-size: $fz;
+  line-height: $lh;
+  transition: .2s;
+}
+
+$screenSmm: 360px;
+$screenSm: 576px;
+$screenMd: 768px;
+$screenLg: 996px;
+$screenGt: 1270px;
+$screenEx: 1396px;
+$screenExEx: 2000px;

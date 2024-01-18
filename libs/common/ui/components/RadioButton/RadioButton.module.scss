@@ -1,0 +1,36 @@
+@import "libs/common/ui/scss/indexDemo.scss";
+
+.radio {
+  appearance: none;
+  position: relative;
+  width: 24px;
+  &::before {
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--color-neutral-600);
+    cursor: pointer;
+    @include mediaMd{
+        width: 16px;
+        height: 16px;
+    }
+  }
+  &:hover::before {
+    
+    border: 3px solid var(--color-neutral-400);
+  }
+  &--chosen {
+    &::before {
+        border: 7px solid var(--color-primary-500);
+        @include mediaMd{
+            border-width: 4px;
+        }
+    }
+  }
+}

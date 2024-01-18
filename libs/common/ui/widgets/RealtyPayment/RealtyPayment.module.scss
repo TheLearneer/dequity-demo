@@ -1,0 +1,216 @@
+@import "libs/common/ui/scss/indexDemo.scss";
+
+.payment {
+	@include containerBorder;
+	background-color: var(--color-background-800-10);
+	@include mediaLg {
+		width: 100%;
+	}
+
+	position: sticky;
+	top: 20px;
+
+	&__breadcrumbs {
+		display: flex;
+		align-items: center;
+		@include titleFont(16px, 1.2, 500);
+		gap: 4px;
+		margin-bottom: 12px;
+
+		li:nth-of-type(2) {
+			display: flex;
+			align-items: center;
+		}
+
+		@include mediaMd {
+			@include titleFont(12px, 1.2, 500);
+		}
+	}
+
+	&__property {
+		color: var(--color-text-100-900);
+		@include titleFont(18px, 1.2, 500);
+		padding-bottom: 24px;
+		border-bottom: 1px solid var(--inverted-color9);
+         margin-top: 12px;
+
+		p {
+			color: inherit;
+		}
+
+		>p:last-child {
+			font-weight: 700;
+			margin-top: 24px;
+			color: var(--color-text400_200);
+		}
+
+		span {
+			color: var(--inverted-color8);
+		}
+
+		@include mediaMd {
+			@include titleFont(14px, 1.2, 500);
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 16px;
+	}
+
+	&__infoItemWrapper{
+		background: var(--color-background-700-50);
+		padding: 8px 12px;
+		border-radius: 500px;
+	}
+
+	&__infoItem {
+		color: var(--color-text-5-900) !important;
+      
+
+		p {
+			color: inherit;
+		}
+
+		
+		font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+         height: 59px;
+		// border-bottom: 1px solid #eff1f2;
+		// border-bottom: 1px solid var(--inverted-color9);
+      
+		@include mediaMd {
+			@include titleFont(16px, 1.2, 400);
+		}
+		&_total{
+			border-top: 1px solid var(--inverted-color9);
+			> p{
+				font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+			}
+		}
+	}
+
+	&__infoNum {
+		// @include titleFont(16px, 1.2);
+		// color: black;
+		color: var(--inverted-color18) !important;
+
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 600;
+		@include mediaMd {
+			@include titleFont(18px, 1.2);
+		}
+		&_percent,&_dollar{
+			color: var(--color-neutral-400);
+            font-weight: 600;
+            line-height: 120%; 
+		}
+	}
+
+	&__preliminary {
+		width: 100%;
+		// padding: 16px 0;
+		display: flex;
+		align-items: center;
+		gap: 32px;
+		>div{
+			svg{
+				width: 100%;
+			}
+		}
+		
+	}
+
+	&__preliminaryItem {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+
+		&:first-of-type {
+			.payment__preliminaryValue {
+				color: var(--color-primary-500);
+			}
+		}
+	}
+
+	&__preliminaryName {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		position: relative;
+		@include titleFont(16px, 1.45, 400);
+		// color: $grayColor;
+		color: var(--color-neutral-400);
+
+		p {
+			color: inherit;
+		}
+
+		@include mediaMd {
+			@include titleFont(12px, 1.45, 400);
+		}
+
+		svg {
+			// background-color: var(--text-color-7);
+			border-radius: 50%;
+		}
+	}
+
+	&__preliminaryValue {
+		@include titleFont(28px, 1.2);
+		// color: black;
+        color:var( --inverted-color18); 
+
+		@include mediaMd {
+			@include titleFont(24px, 1.2);
+		}
+	}
+
+	&__preliminaryTip {
+		@include titleFont(14px, 1.2, 600);
+		color: var(--color-neutral-300);
+
+		@include mediaMd {
+			@include titleFont(10px, 1.2, 600);
+		}
+	}
+
+	&__tooltipIcon {
+		cursor: pointer;
+	}
+
+	&__yieldLimit {
+		// background-color: #f6f8f9;
+		background-color: var(--inverted-color9);
+		border-radius: 500px;
+		padding: 9px 12px;
+
+		span {
+			color: var(--color-neutral-400);
+			padding-left: 12px;
+		}
+	}
+
+   &__btn {
+      background-color: var( --color-primary-500);
+      padding: 17p;
+      @include titleFont(16px, 1.4, 700);
+      height: 55px;
+      white-space: nowrap;
+
+      &:hover {
+         background-color: var(--color-primary-400);
+				
+      }
+   }
+}

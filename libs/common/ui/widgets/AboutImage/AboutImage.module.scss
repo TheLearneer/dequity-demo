@@ -1,0 +1,26 @@
+.images_wrapper {
+    position: relative;
+    @media (max-width: 576px) {
+        max-width: 332px;
+        width: 100%;
+    }
+}
+
+.images_element {
+    position: absolute;
+    right: 17%;
+    bottom: -10px;
+    svg {
+        g {
+            backdrop-filter: blur(10px);
+        }
+    }
+    @media (max-width: 991px) {
+        bottom: 30px;
+        &_light{
+            bottom:-10px;
+        }
+    }
+
+  
+}

@@ -1,0 +1,62 @@
+@import '../../../style-helpers';
+
+.tooltip {
+  // width: 16px;
+  // height: 16px;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+
+  path {
+    transition: .2s ease-out;
+    fill: var(--c-info-tooltip);
+  }
+
+  &:hover {
+    path {
+      fill: var(--c-info-tooltip-hoover);
+    }
+  }
+}
+
+.rc-tooltip {
+  padding: 16px;
+  max-width: 380px;
+  width: max-content;
+  @include font(18px, 1.2, var(--fw-400));
+  color: var(--c-color-primary-dark);
+  border-radius: 7px;
+  box-shadow: 0px 0px 25px 0px var(--c-info-tooltip-shadow);
+  background: var(--c-info-tooltip-background);
+  z-index: 900000;
+
+  @media (max-width: $screenMd) {
+    max-width: 285px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+.rc-tooltip-arrow {
+  width: 7px;
+  height: 7px;
+  background: var(--c-info-tooltip-background);
+  border-radius: 1px;
+  transform: translate(10px, 0) rotate(45deg);
+}
+
+.react-tooltip__place-bottom-start {
+  transform: translate(-10px, 0);
+
+  &>.rc-tooltip-arrow {
+    transform: translate(10px, 0) rotate(45deg);
+  }
+}
+
+.react-tooltip__place-bottom-end {
+  transform: translate(10px, 0);
+
+  &>.rc-tooltip-arrow {
+    transform: translate(-10px, 0) rotate(45deg);
+  }
+}

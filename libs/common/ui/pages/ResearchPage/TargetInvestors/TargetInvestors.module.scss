@@ -1,0 +1,208 @@
+@import "libs/common/ui/scss/indexDemo.scss";
+
+$color-accent: #0D6EFD;
+
+$transitionSpeed: .2s; //Скорость анимации
+
+.TargetInvestors {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   // gap: 0 6vw;
+   padding: 170px 5.55vw 100px;
+   position: relative;
+   margin-top: 85px;
+
+   &_ar{
+      gap: 75px;
+   }
+
+
+
+   @media(max-width: 1024px) {
+      flex-direction: column;
+      padding: 150px 0px 100px;
+   }
+
+   @media(max-width: 575px) {
+      // padding: 0px 0 20px;
+      padding: 0px 0px 100px;
+   }
+
+   &__content {
+      flex-basis: 50%;
+      flex-grow: 1;
+
+      margin-right: 6vw;
+
+
+      @media(max-width: 1024px) {
+         flex-basis: 100%;
+         max-width: 100%;
+         text-align: center;
+         margin: 0 auto;
+      }
+
+      @media(max-width: 575px) {
+         padding: 80px 0 20px 0;
+      }
+   }
+
+   &__title {
+      font-size: 32px;
+      line-height: 1.5;
+      color: var(--color-text-5-800);
+      font-weight: 400;
+      margin-bottom: 29px;
+
+
+      @media(max-width: 575px) {
+         font-size: 29px !important;
+         // margin-bottom: 7px;
+         margin-bottom: 22px;
+         font-weight: 400;
+      }
+   }
+
+   &__text1,
+   &__text2 {
+      font-size: 24px;
+      line-height: 1.33;
+
+      @media(max-width: 1024px) {
+         text-align: center;
+      }
+
+      @media(max-width: 575px) {
+         font-size: 17px;
+         padding: 0 5px;
+      }
+
+      @media(max-width: 380px) {
+         padding: 0 20px;
+      }
+
+      @media (max-width: 1000px) and (min-width: 576px) {
+         padding: 0px 20px;
+      }
+   }
+
+   &__text1 {
+      color: var(--color-text-100-600);
+      font-weight: 300;
+      margin: 0;
+
+
+
+      @media(max-width: 1024px) {
+         max-width: 712px;
+         margin-bottom: 0;
+      }
+
+      @media(max-width: 575px) {
+         max-width: 340px;
+         margin: 0 auto;
+
+         margin-bottom: 26px;
+
+      }
+      @media(max-width: 425px) {
+         max-width: 290px !important;
+    
+      }
+   }
+
+   &__text1+&__text1 {
+      margin-top: 16px;
+   }
+
+   @media (max-width: 575px) {
+      &__img+&__text1 {
+         max-width: 370px;
+      }
+   }
+
+   &__text2 {
+      color: var(--color-primary-500);
+      margin-bottom: 26px;
+      font-size: 24px;
+      
+      font-weight: 400;
+      max-width: 520px;
+
+      @media(max-width: 1024px) {
+         max-width: 712px;
+         margin: 0 auto 19px;
+      }
+
+      @media(max-width: 575px) {
+         font-size: 19px;
+         line-height: 23px;
+         font-weight: 500;
+         margin-bottom: 21px;
+         max-width: 370px;
+      }
+   }
+
+   &__img {
+      flex-basis: 50%;
+      display: flex;
+
+
+      @media(max-width: 1024px) {
+         flex-basis: 100%;
+      }
+
+      @media(max-width: 1024px) and (min-width: 575px) {
+         margin: 40px 0px;
+      }
+
+      @media(max-width: 575px) {
+         padding: 0;
+
+         margin-bottom: 38px;
+      }
+
+      img {
+         max-width: 100%;
+         object-fit: contain;
+         @media(max-width: 1024px) {
+            margin: 0 auto;
+            max-width: 80%;
+            max-height: 70vh;
+         }
+         @media(max-width: 930px) {
+            max-height: 65vh;
+         }
+         @media(max-width: 830px) {
+            max-height: 60vh;
+         }
+         @media(max-width: 525px) {
+            max-width: 95%;
+
+         }
+      }
+   }
+
+   &__TargetInvestors_ar {
+      padding: 340px 138px 100px 84px;
+
+      @media (max-width: 475px) {
+         padding: 0 0 0 0;
+      }
+   }
+
+   &__decor1 {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle farthest-corner at center center, var(--color-primary-400) 0%, transparent 60%);
+      pointer-events: none;
+      width: 1348px;
+      height: 1348px;
+      left: -30%;
+      top: -35%;
+      opacity: 0.08;
+   }
+
+
+}

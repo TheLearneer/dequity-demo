@@ -1,0 +1,38 @@
+@import "libs/common/ui/scss/indexDemo.scss";
+
+.tags {
+   @include containerBorder;  
+
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 6px;
+  grid-column: span 2;
+  flex-wrap: wrap;
+  &__name {
+    margin-right: 2px;
+    @include titleFont(18px, 1.2);    
+    @include mediaMd {
+      @include titleFont(14px, 1.4);
+    }
+    color: var(--color-text-100-900);
+  }
+  &__item {
+    border-radius: 34px;
+    cursor: pointer;
+    @include titleFont(14px, 1.4, 500);
+    padding: 8px 12px;
+    // background-color: #f3f6f9;
+    background-color: var(--inverted-color9);
+    color: var(--color-text-100-500);
+    transition: color 0.1s;
+    white-space: nowrap;
+    &:hover {
+      color: #ffffff;
+    }
+    @include mediaMd {
+      @include titleFont(14px, 1.4, 600);
+      padding: 4px 8px;
+    }
+  }
+}

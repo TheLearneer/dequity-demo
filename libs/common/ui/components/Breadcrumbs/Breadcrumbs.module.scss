@@ -1,0 +1,55 @@
+@import "libs/common/ui/scss/indexDemo.scss";
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &__item {
+    @include titleFont(16px, 1.2, 500);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: space-between;
+    cursor: pointer;
+
+    @include mediaMd {
+      @include titleFont(12px, 1.2, 500);
+    }
+
+    color: var(--color-text500_200);
+
+    &_svg {
+
+      &--ar {
+        transform: rotate(180deg);
+      }
+
+      path {
+        stroke: var(--color-text500_200);
+
+      }
+
+    }
+
+    &:last-child {
+      color: var(--color-text300_200);
+    }
+  }
+
+  &__item--payment {
+    color: var(--color-text300_500);
+    font-weight: 400;
+
+    svg {
+      stroke: #223341;
+
+    }
+  }
+
+  &__item--payment:last-child {
+    // color: black;
+    color: var(--color-text300_900);
+    cursor: default;
+  }
+}

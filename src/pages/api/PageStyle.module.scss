@@ -1,0 +1,12 @@
+@import "libs/common/ui/scss/indexDemo.scss";
+
+._404_div{
+   height: 62vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   @media(max-width: 770px){
+      height: 100vh;
+   }
+}

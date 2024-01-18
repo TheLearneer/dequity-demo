@@ -1,0 +1,148 @@
+@import '../../../style-helpers';
+
+.values_dot_wrapper{
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+}
+
+.value {
+
+
+  @media (max-width:$screenMd) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+  }
+  // display: flex;
+  // gap: 4px;
+  // flex-shrink: 0;
+
+  // &:nth-child(1) {
+  //   width: 114px;
+  // }
+
+  // &:nth-child(2),
+  // &:nth-child(3) {
+  //   width: 150px;
+  // }
+
+  // @media (max-width: $screenMd) {
+  //   &:nth-child(1) {
+  //     width: 80px;
+  //   }
+  
+  //   &:nth-child(2),
+  //   &:nth-child(3) {
+  //     width: 120px;
+  //   }
+  // }
+
+  &__dot {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: 50%;
+  
+    display: block;
+    transition: display .2s ease;
+
+    
+
+    &--50 {
+      background-color: var(--c-color-blue-50);
+    }
+
+    &--300 {
+      background-color: var(--c-color-blue-300);
+    }
+
+    &--500 {
+      background-color: var(--c-color-blue-500);
+    }
+
+    &__inactiveDot{
+      display: none;
+      transition: display .2s ease;
+    }
+
+    &__small{
+      width: 16px;
+      height: 16px;
+    }
+    @media (max-width:$screenSm) {
+      margin-top: 2.5px;
+    }
+  }
+
+  &__text {
+    @include font(18px, 1.45, var(--fw-400));
+
+    @media (max-width:$screenGt) {
+      font-size: 16px;
+    }
+
+    @media (max-width: $screenMd) {
+      font-size: 14px;
+    }
+
+    @media (max-width: $screenSm) {
+      font-size: 12px;
+    }
+  }
+
+  &__label {
+    margin-bottom: 4px;
+    color: var(--c-color-secondary-gray);
+    
+  }
+
+  &__value {
+    @include font(24px, 1.45, var(--fw-600));
+    color: var(--c-values-color);
+    margin-bottom: 0 !important;
+    margin-left: 10px;
+
+    @media (max-width: $screenGt) {
+      font-size: 16px;
+    }
+
+    @media (max-width: $screenSm) {
+      font-size: 14px;
+    }
+  }
+
+  &__content{
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+   
+    
+    &_isActiveTooltip{
+      opacity: 0;
+      transition: opacity .2s ease-in-out;
+      
+    }
+  }
+}
+
+.yield {
+  color: var(--color-text-5-900);
+  font-size: 28px;
+  font-weight: var(--fw-600);
+  margin-left: unset;
+
+  @media(max-width:1280px){
+    font-size: 26px;
+  }
+
+  @media (max-width:$screenSmm) {
+  
+    font-size: 18px;
+  }
+}

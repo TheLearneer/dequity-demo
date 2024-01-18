@@ -1,0 +1,230 @@
+@import "libs/common/ui/scss/indexDemo.scss";
+
+.form {
+  width: 100%;
+
+  &__title {
+    color: var(--color-text-25-900);
+    @include titleFont(28px, 1.2);
+    margin-bottom: 24px;
+  }
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  &__option {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    height: 84px;
+    padding-inline: 24px;
+    border: 1px solid var(--inverted-color9);
+    cursor: pointer;
+    transition: border-color 0.3s;
+    background: var(--background-input);
+    input::before {
+      transition: border-color 0.3s;      
+    }
+    &:hover {
+      border-color: var(--color-primary-500);   
+      input {
+        &::before {
+          border-color: var(--color-primary-500);
+        }
+      }
+    }
+    
+    @include mediaGt {
+        padding-inline: 16px;
+    }
+  }
+  &__option--chosen {
+    border: 1px solid var(--color-primary-500);
+    background: var(--background-input-active);
+  }
+  &__optionIcon {
+    margin: 0 32px 0 16px;
+    @include mediaGt {
+      margin: 0 18px 0 12px;
+    }
+  }
+  &__optionLabel {
+    color: var(--color-text1_2);
+    pointer-events: none;
+    @include titleFont(18px, 1.2);
+    @include mediaGt {
+      @include titleFont(16px, 1.2);
+    }
+    @media (max-width: 425px) {
+      margin-left: 15px;
+      margin-right: 10px;
+    }
+  }
+  &__optionDescription {
+    margin-left: auto;
+    margin-bottom: 0;
+    @include titleFont(16px, 1.45, 400);
+    color: var(--color-neutral-300);
+    text-align: right;
+    @include mediaGt {
+      @include titleFont(14px, 1.45, 400);
+    }
+    &_ar {
+    margin-left: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    @include titleFont(16px, 1.45, 400);
+    color: var(--color-neutral-300);
+    text-align: right;
+    @include mediaGt {
+      @include titleFont(14px, 1.45, 400);
+    }
+  }
+  }
+  
+  
+    &__icon {
+    @include mediaMd{
+        width: 25px;
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+
+    padding: 0 48px;
+    border-radius: 16px;
+    border: 2px solid var(--color-primary-600-200);
+    font-size: 20px;
+    line-height: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+
+    margin-bottom: 140px;
+    width: fit-content;
+    cursor: pointer;
+    transition-duration: 0.1s;
+
+    @media (max-width: 384px) {
+      padding: 0 12.31vw; //48px
+      &--es {
+        padding: 0 8.2vw !important;
+      }
+      &--pt {
+        padding: 0 5vw !important;
+      }
+    }
+
+
+
+    &_wrapper {
+
+      display: flex;
+
+      @media (max-width: 992px) {
+        order: 4;
+        flex-basis: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    &_header_mobile_btn {
+
+      order: 5;
+
+      display: none;
+
+      z-index: 10;
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: fixed;
+      right: 15px;
+      bottom: 10px;
+
+      &_btn {
+        width: 32px;
+        height: 21px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        span {
+
+          height: 2px;
+          display: block;
+          background: #7185AA;
+          flex-basis: 100%;
+
+          &:last-child {
+            flex-basis: 80%;
+          }
+        }
+      }
+
+
+      // position: relative;
+
+
+
+      @media (max-width: 992px) {
+        display: flex;
+
+      }
+    }
+
+
+    @media (max-width: 992px) {
+      font-weight: 500;
+      font-size: 16.5861px;
+      line-height: 25px;
+      justify-content: flex-start;
+      flex-basis: auto;
+      order: 4;
+    }
+
+    img {
+      width: 0px;
+      transition-duration: 0.1s;
+
+    }
+
+    @media (min-width: 575px) {
+      &:hover {
+        padding: 0 40px 0 35px;
+
+        @media (max-width: 992px) {
+          padding: 0 30px;
+
+        }
+        img {
+          margin-left: 16px;
+          width: 31px;
+
+          @media (max-width: 992px) {
+            width: 21px;
+
+          }
+        }
+      }
+    }
+
+
+
+    &:hover {
+      background: var(--color-primary-400);
+      border-color: var(--color-primary-400);
+      color: var(--color-neutral-0);
+    }
+
+  }
+}

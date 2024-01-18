@@ -1,0 +1,143 @@
+@import "libs/common/ui/scss/indexDemo.scss";
+
+.ResearchPortfolio {
+  position: relative;
+  height: max-content;
+  max-width: 928px;
+ 
+  padding: 20px 60px;
+
+  margin-top: 75px !important;
+
+  @media(max-width: 990px) {
+    padding: 0;
+    padding-bottom: 20px;
+
+  }
+
+  &_wrapper{
+    max-width: 1000px;
+    width: 100%;
+  }
+
+
+  .ResearchPortfolio:hover &_bg {
+    opacity: 1;
+    transition: opacity 0.8s ease;
+  }
+
+  &_bg {
+    opacity: 0.4;
+    transition: opacity 0.8s ease;
+
+    @media (max-width: 575px) {
+      transform: scale(1.1) translateY(-5%);
+    }
+  }
+
+
+
+  &__BeOwnerTitle {
+    color: var(--color-primary-500);
+    font-size: 28px;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    // padding-top: 130px;
+    // padding-top: 230px;
+    margin-bottom: 20px;
+    font-weight: 400;
+
+
+
+    @media(max-width: 678px) {
+      // margin-bottom: 21px;
+      font-size: 16px;
+      // padding-top: 90px;
+      // padding-top: 75px;
+
+    }
+  }
+
+  &__BeOwnerText {
+    color: var(--color-text2);
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.33;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 22px;
+
+    @media(max-width: 990px) {
+      // padding: 0px 20px 20px 0px;
+     
+      font-size: 19px;
+    
+
+    }
+
+    @media (max-width: 525px) {
+      // max-width: 350px;
+      font-size: 19px;
+      margin-bottom: 19px;
+    }
+    @media (max-width: 320px) {
+      max-width: 300px;
+      font-size: 17px;
+      
+    }
+
+
+
+    &__size {
+      max-width: 928px;
+      
+      position: relative;
+
+      // @media(max-width: 900px) {
+      //   width: 600px;
+      // }
+
+      // @media(max-width: 760px) {
+      //   max-width:  500px;
+      //   width: 100%;
+      // }
+
+      // @media(max-width: 601px) {
+      //   max-width: 400px;
+      // }
+
+      &_es{
+        max-width: unset !important;
+      }
+      
+    }
+
+  
+  }
+
+  &__BeownerLittletxt {
+    color: var(--color-text-5-600);
+    font-size: 24px;
+    line-height: 1.33;
+    font-weight: 300;
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    // padding-bottom: 100px;
+    // padding-bottom: 200px;
+
+    // @media (max-width: 575px){
+    //   padding-bottom: 50px;
+    // }
+
+    @media (max-width: 990px) {
+      // max-width: 370px;
+      font-size: 16px;
+      line-height: 22px;
+
+      // padding: 0px 20px 0px 0px;
+    }
+  }
+
+}

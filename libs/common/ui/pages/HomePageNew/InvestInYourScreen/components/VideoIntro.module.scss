@@ -1,0 +1,20 @@
+@import "../../style-helpers";
+
+.frame{
+
+    border-radius: 12px;
+    height: 90vh;
+    @media (max-width:$screenLg) {
+        height: 70vh;
+    }
+
+    @media (max-width:$screenSm) {
+        height: 50vh;
+    }
+
+    @media (max-width:$screenSmm) {
+        height: 30vh;
+    }
+
+    
+}
