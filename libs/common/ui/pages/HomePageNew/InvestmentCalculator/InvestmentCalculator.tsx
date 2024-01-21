@@ -156,6 +156,35 @@ const InvestmentCalculator: FC<IProps> = ({ className, data }) => {
           </BorderWrapper>
         </div>
 
+        <div
+          className={cl(
+            styles.calculator__info_wrapper,
+            styles.calculator__info_wrapper__mobile
+          )}
+        >
+          <BorderWrapper
+            className={cl(
+              styles.calculator__info,
+              isHoveredLastElement && styles.calculator__info__lastBarHovered
+            )}
+          >
+            <InfoValue
+              color="300"
+              label={data?.calc_labelRental}
+              value={rentalIncome}
+              isActiveTooltip={isTooltipActive}
+              lastElementTooltipStyle={isHoveredLastElement}
+            />
+            <InfoValue
+              color="500"
+              label={data?.calc_labelAppreciation}
+              value={valueAppreciation}
+              isActiveTooltip={isTooltipActive}
+              lastElementTooltipStyle={isHoveredLastElement}
+            />
+          </BorderWrapper>
+        </div>
+
         <InvestChart
           data={chartData}
           totalLabel={data?.calc_totalLabel || "Total"}

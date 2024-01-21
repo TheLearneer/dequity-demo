@@ -8,8 +8,18 @@
 }
 
 .value {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
   @media (max-width: $screenMd) {
-    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+  }
+
+  @media (min-width: $screenMd) {
+    width: auto;
     justify-content: space-between;
     align-items: center;
     gap: 4px;
@@ -107,6 +117,11 @@
     margin-bottom: 0 !important;
     margin-left: 10px;
 
+    &_hidden {
+      visibility: hidden;
+      width: 0;
+    }
+
     @media (max-width: $screenGt) {
       font-size: 16px;
     }
@@ -130,10 +145,8 @@
     }
 
     &_isLastItem {
-      @media (min-width: $screenMd) {
-        height: 0px;
-        margin-top: -2px;
-      }
+      height: 0px;
+      margin-top: -2px;
     }
   }
 }
