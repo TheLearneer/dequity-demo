@@ -69,9 +69,11 @@ export const InvestChart: FC<IProps> = memo(
         allX.push(boundingRec.x);
       });
 
-      const tooltipHeight =
+      const tooltipHeight = Math.max(
         document.getElementById("investment-tooltip")?.getBoundingClientRect()
-          ?.height ?? 0;
+          ?.height ?? 0,
+        128
+      );
 
       const finalPos = 160 - Math.ceil(totalHeight) - Math.ceil(tooltipHeight);
 
