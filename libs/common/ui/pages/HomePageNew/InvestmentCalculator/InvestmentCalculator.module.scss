@@ -60,12 +60,14 @@
   &__info {
     justify-content: space-between;
     gap: 20px;
-    height: 54px;
 
     &__lastBarHovered {
-      width: 70%;
       flex-wrap: wrap;
       transition: 0.2s;
+
+      @media (min-width: $screenMd) {
+        width: 70%;
+      }
     }
 
     @media (max-width: $screenMd) {
@@ -73,6 +75,10 @@
       justify-content: center;
       padding: 24px !important;
       gap: 8px;
+    }
+
+    @media (min-width: $screenMd) {
+      height: 54px;
     }
 
     @media (max-width: 425px) {

@@ -91,11 +91,14 @@
 
   &__label {
     margin-bottom: 4px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
     color: var(--c-color-secondary-gray);
+
+    @media (min-width: $screenMd) {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
   }
 
   &__value {
@@ -127,8 +130,10 @@
     }
 
     &_isLastItem {
-      height: 0px;
-      margin-top: -2px;
+      @media (min-width: $screenMd) {
+        height: 0px;
+        margin-top: -2px;
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-import { FC, memo, useEffect, useRef, useState } from "react";
+import { FC, memo, useEffect, useMemo, useRef, useState } from "react";
 import {
   Bar,
   BarChart,
@@ -37,6 +37,8 @@ export const InvestChart: FC<IProps> = memo(
     const [tooltipPositionX, setTooltipPositionX] = useState<number>(0);
     const [tooltipPositionY, setTooltipPositionY] = useState<number>(0);
 
+    const [tempYear, setTempYear] = useState<number>(0);
+
     const rightData =
       locale === "ar" ? data.sort((a: any, b: any) => b.year - a.year) : data;
     const shiftedMinValue = Math.round(
@@ -52,20 +54,19 @@ export const InvestChart: FC<IProps> = memo(
 
     const orientation = locale === "ar" ? "right" : "left";
 
-    //
-    function handleHeight(_data: any, event: any) {
-      const itemIndex = _data.activeTooltipIndex;
-      const year = data[itemIndex]?.year ?? 0;
-      setYear(Number(year));
+    function getPositions() {
+      const activeBars = document.querySelectorAll(".recharts-active-bar");
+      const containerItem = document.getElementsByClassName(
+        "recharts-responsive-container"
+      );
 
-      const columnElement = event.currentTarget;
-      if (!columnElement) return;
-
-      const activeBars = columnElement.querySelectorAll(".recharts-active-bar");
-
+      const allX: number[] = [];
       let totalHeight = 0;
+
       activeBars.forEach((bar: any) => {
-        totalHeight += bar.getBoundingClientRect().height;
+        const boundingRec = bar.getBoundingClientRect();
+        totalHeight += boundingRec.height;
+        allX.push(boundingRec.x);
       });
 
       const tooltipHeight =
@@ -73,8 +74,27 @@ export const InvestChart: FC<IProps> = memo(
           ?.height ?? 0;
 
       const finalPos = 160 - Math.ceil(totalHeight) - Math.ceil(tooltipHeight);
+
+      const xPos =
+        Math.min(...allX) - containerItem?.[0]?.getBoundingClientRect?.()?.x;
+
       setTooltipPositionY(finalPos);
+      setTooltipPositionX(xPos);
     }
+
+    function handleHeight(_data: any) {
+      const itemIndex = _data.activeTooltipIndex;
+      const year = data[itemIndex]?.year ?? 0;
+
+      setYear(Number(year));
+      setTempYear(Number(year));
+
+      getPositions();
+    }
+
+    useEffect(() => {
+      getPositions();
+    }, [tempYear]);
 
     useEffect(() => {
       const handleResize = (event: any) => {
@@ -213,9 +233,6 @@ export const InvestChart: FC<IProps> = memo(
                 // className={styles.barev}
                 radius={[0, 0, 4, 4]}
                 barSize={76}
-                onMouseEnter={(data) => {
-                  setTooltipPositionX(data.x);
-                }}
               />
 
               <Bar
@@ -223,9 +240,6 @@ export const InvestChart: FC<IProps> = memo(
                 stackId="a"
                 fill="url(#lg300)"
                 barSize={76}
-                onMouseEnter={(data) => {
-                  setTooltipPositionX(data.x);
-                }}
               />
 
               <Bar
@@ -234,9 +248,6 @@ export const InvestChart: FC<IProps> = memo(
                 fill="url(#lg50)"
                 radius={[4, 4, 0, 0]}
                 barSize={76}
-                onMouseEnter={(data) => {
-                  setTooltipPositionX(data.x);
-                }}
               />
             </BarChart>
           </ResponsiveContainer>
