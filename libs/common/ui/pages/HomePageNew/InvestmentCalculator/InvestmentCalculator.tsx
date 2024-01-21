@@ -1,7 +1,6 @@
 import { ChangeEventHandler, FC, useEffect, useMemo, useState } from "react";
 import {
   BorderWrapper,
-
   InfoTooltip,
   InfoTooltipConnector,
   Row,
@@ -16,7 +15,6 @@ import {
   INITIAL_STATE,
   MAX_INVEST,
   MIN_INVEST,
-
 } from "./constants";
 import cl from "classnames";
 import styles from "./InvestmentCalculator.module.scss";
@@ -51,7 +49,7 @@ const InvestmentCalculator: FC<IProps> = ({ className, data }) => {
   }, []);
 
   const handlerChange = (value: number) => {
-    setInvestment(value)
+    setInvestment(value);
   };
 
   const DEVICE_WITH = 768;
@@ -66,7 +64,8 @@ const InvestmentCalculator: FC<IProps> = ({ className, data }) => {
       [investment, year]
     );
 
-  const isHoveredLastElement = hoveredYear === chartData[chartData.length - 1].year;
+  const isHoveredLastElement =
+    hoveredYear === chartData[chartData.length - 1].year;
 
   const toolTip = (
     <InfoTooltip
@@ -138,27 +137,21 @@ const InvestmentCalculator: FC<IProps> = ({ className, data }) => {
               label={data?.calc_labelInvestment}
               value={investmentValue}
               isActiveTooltip={isTooltipActive}
-              lastElementTooltipStyle={
-                hoveredYear + 4 === chartData[chartData.length - 1].year
-              }
+              lastElementTooltipStyle={isHoveredLastElement}
             />
             <InfoValue
               color="300"
               label={data?.calc_labelRental}
               value={rentalIncome}
               isActiveTooltip={isTooltipActive}
-              lastElementTooltipStyle={
-                hoveredYear + 4 === chartData[chartData.length - 1].year
-              }
+              lastElementTooltipStyle={isHoveredLastElement}
             />
             <InfoValue
               color="500"
               label={data?.calc_labelAppreciation}
               value={valueAppreciation}
               isActiveTooltip={isTooltipActive}
-              lastElementTooltipStyle={
-                hoveredYear + 4 === chartData[chartData.length - 1].year
-              }
+              lastElementTooltipStyle={isHoveredLastElement}
             />
           </BorderWrapper>
         </div>

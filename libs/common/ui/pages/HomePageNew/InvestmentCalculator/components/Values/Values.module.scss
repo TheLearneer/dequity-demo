@@ -1,17 +1,14 @@
-@import '../../../style-helpers';
+@import "../../../style-helpers";
 
-.values_dot_wrapper{
+.values_dot_wrapper {
   display: flex;
   align-items: center;
 
   gap: 8px;
-
 }
 
 .value {
-
-
-  @media (max-width:$screenMd) {
+  @media (max-width: $screenMd) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,7 +31,7 @@
   //   &:nth-child(1) {
   //     width: 80px;
   //   }
-  
+
   //   &:nth-child(2),
   //   &:nth-child(3) {
   //     width: 120px;
@@ -46,11 +43,9 @@
     height: 20px;
     flex-shrink: 0;
     border-radius: 50%;
-  
-    display: block;
-    transition: display .2s ease;
 
-    
+    display: block;
+    transition: display 0.2s ease;
 
     &--50 {
       background-color: var(--c-color-blue-50);
@@ -64,16 +59,16 @@
       background-color: var(--c-color-blue-500);
     }
 
-    &__inactiveDot{
+    &__inactiveDot {
       display: none;
-      transition: display .2s ease;
+      transition: display 0.2s ease;
     }
 
-    &__small{
+    &__small {
       width: 16px;
       height: 16px;
     }
-    @media (max-width:$screenSm) {
+    @media (max-width: $screenSm) {
       margin-top: 2.5px;
     }
   }
@@ -81,7 +76,7 @@
   &__text {
     @include font(18px, 1.45, var(--fw-400));
 
-    @media (max-width:$screenGt) {
+    @media (max-width: $screenGt) {
       font-size: 16px;
     }
 
@@ -96,8 +91,11 @@
 
   &__label {
     margin-bottom: 4px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
     color: var(--c-color-secondary-gray);
-    
   }
 
   &__value {
@@ -115,18 +113,22 @@
     }
   }
 
-  &__content{
+  &__content {
     display: flex;
     align-items: center;
     margin-top: 6px;
     opacity: 1;
-    transition: opacity .2s ease-in-out;
-   
-    
-    &_isActiveTooltip{
+    transition: opacity 0.2s ease-in-out;
+
+    &_isActiveTooltip {
       opacity: 0;
-      transition: opacity .2s ease-in-out;
-      
+      visibility: hidden;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    &_isLastItem {
+      height: 0px;
+      margin-top: -2px;
     }
   }
 }
@@ -137,12 +139,11 @@
   font-weight: var(--fw-600);
   margin-left: unset;
 
-  @media(max-width:1280px){
+  @media (max-width: 1280px) {
     font-size: 26px;
   }
 
-  @media (max-width:$screenSmm) {
-  
+  @media (max-width: $screenSmm) {
     font-size: 18px;
   }
 }
